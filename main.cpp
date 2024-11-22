@@ -6,17 +6,18 @@
 using namespace std;
 
 
+
 vector<string> readLines(string& filename) {
   vector<string> lines;
-  std::ifstream inputFile(filename);
+  ifstream inputFile("1.txt");
 
   if (inputFile.is_open()) {
-    std::string line;
-    while (std::getline(inputFile, line)) {
+    string line;
+    while (getline(inputFile, line)) {
       lines.push_back(line);
     }
-    inputFile.close();
-  } 
+
+  }
 
   return lines;
 }
