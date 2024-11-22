@@ -1,23 +1,24 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include<vector>
+#include <vector>
+
 using namespace std;
 
-void readLines(){
 
-    
-}
+vector<string> readLines(string& filename) {
+  vector<string> lines;
+  std::ifstream inputFile(filename);
 
-void showLines(){
+  if (inputFile.is_open()) {
+    std::string line;
+    while (std::getline(inputFile, line)) {
+      lines.push_back(line);
+    }
+    inputFile.close();
+  } 
 
-
-    
-}
-
-void linesOut(){
-
-    
+  return lines;
 }
 
 
